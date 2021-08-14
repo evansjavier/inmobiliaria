@@ -8,11 +8,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12">
                 <p class="h4">Básicos</p>
-                <label class="font-weight-bold">Tipo</label>
+                <label class="font-weight-bold">Modelo</label>
                 <select class ="form-control">
-                    <option>Vivienda</option>
+                    <option>Vivienda con cédula de hibitabilidad</option>
                     <option>Edificio</option>
                     <option>Otro</option>
                 </select>
@@ -24,58 +24,101 @@
                     </option>
                 </select>
 
+                <label class="font-weight-bold mt-2">Altura de la vivienda</label>
+                <input class="form-control" type="number" min="0">
+
+                <label class="font-weight-bold mt-2">Número de plantas de la vivienda</label>
+                <input class="form-control" type="number" min="0">
+
+                <label class="font-weight-bold mt-2">Metros cuadrados de la vivienda</label>
+                
+            </div>
+            <div class="col-12 mt-4">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="h4">Metros cuadrados</p>
+                    </div>
+
+                    <div class="col-3">
+                        <label class="font-weight-bold">Construidos</label>
+                        <input class="form-control" type="number" min="0">
+                    </div>
+                    
+                    <div class="col-3">
+                        <label class="font-weight-bold mt-2">Útiles</label>
+                        <input class="form-control" type="number" min="0">
+                    </div>
+
+                    <div class="col-3">
+                        <label class="font-weight-bold mt-2">En escritura</label>
+                        <input class="form-control" type="number" min="0">
+                    </div>
+
+
+                    <div class="col-3">
+                        <label class="font-weight-bold mt-2">En catastro</label>
+                        <input class="form-control" type="number" min="0">
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-4">
+                        <label class="font-weight-bold mt-2">Bajo techo</label>
+                        <div class="row">
+                            <div class="col-8 text-metros"><p>(metros totales sin terrazas, patios, porches o cualquier espacio que no esté techado, cerrado y con cédula de habitabilidad)</p></div>
+                            <div class="col-4"><input class="form-control" type="number" min="0"></div>
+
+                            <div class="col-12 text-center">
+                                <img src="img/GENERALIMG0001.jpg" class="mx-auto img-borde" style="width: 50%">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-4">
+                        <label class="font-weight-bold mt-2">Total no habitable</label>
+                        <div class="row">
+                            <div class="col-8 text-metros"><p>(metros totales de terrazas, patios, porches o cualquier espacio techado. Incluya aquí los metros de garajes, invernaderos, trasteros, casetas, etc. No cuente los metros de parcela)</p></div>
+                            <div class="col-4"><input class="form-control" type="number" min="0"></div>
+
+                            <div class="col-12 text-center">
+                                <img src="img/GENERALIMG0002.jpg" class="mx-auto img-borde" style="width: 50%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <label class="font-weight-bold mt-2">Total de parcela</label>
+                        <div class="row">
+                            <div class="col-8 text-metros"><p>sin contar con los metros bajo techo y los metros del apartado anterior (no-habitables)</p></div>
+                            <div class="col-4"><input class="form-control" type="number" min="0"></div>
+
+                            <div class="col-12 text-center">
+                                <img src="img/GENERALIMG0003.jpg" class="mx-auto img-borde" style="width: 50%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-            <div class="col-12 col-md-4">
-                <p class="h4">Metros cuadrados</p>
-                <label class="font-weight-bold">Construidos</label>
-                <input class="form-control" type="number" min="0">
-
-                <label class="font-weight-bold mt-2">Útiles</label>
-                <input class="form-control" type="number" min="0">
-
-                <label class="font-weight-bold mt-2">En escritura</label>
-                <input class="form-control" type="number" min="0">
-
-                <label class="font-weight-bold mt-2">En catastro</label>
-                <input class="form-control" type="number" min="0">
-
-                <label class="font-weight-bold mt-2">Bajo techo (Dentro de la vivienda, suele ser igual a útiles)</label>
-                <input class="form-control" type="number" min="0">
-
-                <label class="font-weight-bold mt-2">Total de terrazas, porches, patios (Suma de todos)</label>
-                <input class="form-control" type="number" min="0">
-            </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 mt-4">
                 <p class="h4">Altura de techos</p>
 
-                <label class="font-weight-bold mt-2">En todo el inmueble</label>
-                <select class ="form-control">
-                    <option v-for="opt in altura_techos_opciones" v-bind:value="opt">
-                        {{ opt }}
-                    </option>
-                </select>
-
-                <label class="font-weight-bold mt-2">En la mitad</label>
-                <select class ="form-control">
-                    <option v-for="opt in altura_techos_opciones" v-bind:value="opt">
-                        {{ opt }}
-                    </option>
-                </select>
-
-                <label class="font-weight-bold mt-2">En menos de la mitad</label>
-                <select class ="form-control">
-                    <option v-for="opt in altura_techos_opciones" v-bind:value="opt">
-                        {{ opt }}
-                    </option>
-                </select>
-
-                <label class="font-weight-bold mt-2">En una estancia</label>
-                <select class ="form-control">
-                    <option v-for="opt in altura_techos_opciones" v-bind:value="opt">
-                        {{ opt }}
-                    </option>
-                </select>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-4 text-center">
+                                <img src="img/GENERALIMG0002.jpg" class="img-fluid img-borde">
+                            </div>
+                            <div class="col-5"><p>ALTURA DE TECHO</p></div>
+                            <div class="col-3"><input class="form-control" type="number" min="0"></div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-9 text-right"><p>METROS 2 DE LA VIVIENDA CON ESTA ALTURA</p></div>
+                            <div class="col-3"><input class="form-control" type="number" min="0"></div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -124,5 +167,13 @@
 <style>
     #main-logo{
         width: 10rem;
+    }
+
+
+    .text-metros{
+        min-height: 10rem;
+    }
+    .img-borde{
+        border: 1px dotted green;
     }
 </style>
