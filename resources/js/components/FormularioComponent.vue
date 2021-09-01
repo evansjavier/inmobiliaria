@@ -3,14 +3,13 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-12 mb-4">
-                <img src="https://png.pngtree.com/png-clipart/20200727/original/pngtree-home-logo-vector-simple-and-minimalist-png-image_5164484.jpg" id="main-logo"/>
-                <h2 class="text-center">Datos de la vivienda</h2>
+                <h2 class="text-center">Registro de vivienda</h2>
             </div>
         </div>
         
         <div class="row" v-if="page==1">
             <div class="col-12">
-                <p class="h4">Básicos</p>
+                <p class="h4">Datos básicos</p>
                 <label class="font-weight-bold">Modelo</label>
                 <select class ="form-control">
                     <option>Vivienda con cédula de hibitabilidad</option>
@@ -632,6 +631,12 @@
                     { name: "3 senos" },
                     { name: "4 senos" },
                     { name: "Más de 4 senos" }
+                ],
+                vistas_vivienda_opc: [
+                    {
+                        name: "Cuidad",
+                        img: "..."
+                    }
                 ],
                 page: 1,
             }

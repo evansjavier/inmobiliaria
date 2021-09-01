@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/formulario', function () {
     return view('formulario');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
