@@ -21,6 +21,10 @@ Route::get('/formulario', function () {
     return view('formulario');
 });
 
+Route::get('/register-profesional', function () {
+    return view('auth/register_profesional');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -5,16 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registrar particular') }}</div>
+                <div class="card-header">{{ __('Registrar profesional') }}</div>
 
                 <div class="card-body">
-
-                    <p class="text-right mt-3 mb-5">¿Eres profesional? <a href="{{ url('register-profesional') }}">Registrate Aquí</a></p>
+                
+                    <p class="text-right mt-3 mb-5">¿Eres particular? <a href="{{ route('register') }}">Registrate Aquí</a></p>
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <input id="rol" type="hidden" name="rol" value="particular" >
+                        <input id="rol" type="hidden" name="rol" value="profesional" >
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="dni_cif" class="col-md-4 col-form-label text-md-right">{{ __('Dni') }}</label>
+                            <label for="dni_cif" class="col-md-4 col-form-label text-md-right">{{ __('Dni/Cif/Nif') }}</label>
 
                             <div class="col-md-6">
                                 <input id="dni_cif" type="text" class="form-control @error('dni_cif') is-invalid @enderror" name="dni_cif" value="{{ old('dni_cif') }}" required autocomplete="dni_cif">
@@ -73,12 +73,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="direccion_vivienda" class="col-md-4 col-form-label text-md-right">{{ __('Dirección vivienda') }}</label>
+                            <label for="persona_contacto" class="col-md-4 col-form-label text-md-right">{{ __('Persona de contacto') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="direccion_vivienda" type="text" class="form-control @error('direccion_vivienda') is-invalid @enderror" name="direccion_vivienda" required autocomplete="direccion_vivienda">{{ old('direccion_vivienda') }}</textarea>
+                                <textarea id="persona_contacto" type="text" class="form-control @error('persona_contacto') is-invalid @enderror" name="persona_contacto" required autocomplete="persona_contacto">{{ old('persona_contacto') }}</textarea>
 
-                                @error('direccion_vivienda')
+                                @error('persona_contacto')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

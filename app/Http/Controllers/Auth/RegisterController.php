@@ -56,7 +56,9 @@ class RegisterController extends Controller
             'apellidos' => ['required', 'string', 'max:255'],
             'dni_cif' => ['required', 'string', 'max:255'],
             'telefono' => ['required', 'string', 'max:255'],
-            'direccion_vivienda' => ['required', 'string', 'max:500']
+            'direccion_vivienda' => ['required_if:rol,particular', 'string', 'max:500'],
+            'persona_contacto' => ['required_if:rol,profesional', 'string', 'max:500'],
+            'rol' => ['required', 'in:particular,profesional']
         ]);
     }
 
@@ -73,14 +75,15 @@ class RegisterController extends Controller
             'apellidos' => $data['apellidos'],
             'dni_cif' => $data['dni_cif'],
             'telefono' => $data['telefono'],
-            'direccion_vivienda' => $data['direccion_vivienda'],
+            'direccion_vivienda' => ($data['rol']=='particular') ? $data['direccion_vivienda'] : null,
+            'rol' => $data['rol'],
+            'persona_contacto' => ($data['rol']=='profesional') ? $data['persona_contacto'] : null,
             
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
 
-        $user->rol = 'particular';
-        $user->save();
+        $user->save();        
         return $user;
     }
 }

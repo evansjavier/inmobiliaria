@@ -22,7 +22,9 @@ class User extends Authenticatable
         'apellidos',
         'dni_cif',
         'telefono',
-        'direccion_vivienda'
+        'direccion_vivienda',
+        'persona_contacto',
+        'rol'
     ];
 
     /**
