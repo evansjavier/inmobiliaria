@@ -1012,6 +1012,456 @@
             
         </div>
 
+        <!-- Puertas -->
+        <div class="row" v-if="page==9">
+            <div class="col-12 form-group">
+
+                <label class="h4 mt-2">Puertas</label>
+
+                <div class="col-12 mt-4 px-0">
+                    <label class="h5">Modelo:</label>
+                </div>
+
+                <div class="col-12">
+                    <div class="row px-2">
+                        <div v-for="(opc, i) in puertasModelosOpc" :key="opc.name" class="col custom-radio">
+                            <input type="radio" :id="'puertasModelos' + i" :value="opc.name" name="puertasModelos" class="custom-control-input">
+                            <label class="custom-control-label" :for="'puertasModelos' + i">{{ opc.name }}
+                                <img :src="opc.img" class="d-block" >
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 mt-4 px-0">
+                    <label class="h5">Número de hojas del mismo tipo:</label>
+                </div>
+                <div class="col-12">
+                    <div class="row px-2">
+                        <div v-for="(opc, i) in puertasHojasOpc" :key="opc.name" class="col custom-radio">
+                            <input type="radio" :id="'puertasHojas' + i" :value="opc.name" name="puertasHojas" class="custom-control-input">
+                            <label class="custom-control-label" :for="'puertasHojas' + i">{{ opc.name }}
+                                <img :src="opc.img" class="d-block" >
+                            </label>
+                        </div>
+                    </div>
+                </div>
+         
+                <div class="col-12 mb-3 px-0">
+                    <div class="form-inline mt-4">
+                    <label class="form-check-label">Si tiene más de 6 hojas, especifique el número total</label>
+                    <input class="form-control ml-2" />
+                    </div>                        
+                </div>
+
+                <div class="col-12 mt-4 px-0">
+                    <label>Tamaño total de la puerta, incluyendo todas sus hojas y en cm:</label>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="col-6"><p>Largo</p></div>
+                            <div class="col-6"><input class="form-control" type="number" min="0"></div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="col-6"><p>Ancho</p></div>
+                            <div class="col-6"><input class="form-control" type="number" min="0"></div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="col-6"><p>Alto</p></div>
+                            <div class="col-6"><input class="form-control" type="number" min="0"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4 px-0">
+                    <label class="h5">Material</label>
+                </div>
+
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <p>Metálica</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="img/puertas/PUERTASIMG0015.jpg" class="d-block border" >
+                                </div>
+                                <div class="col-8 custom-radio">
+                                    <div>
+                                        <input type="radio" id="puertasMaterial1" value="hierro" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial1">Hierro</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="puertasMaterial2" value="acero" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial2">Acero</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="puertasMaterial3" value="aluminio" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial3">Aluminio</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="puertasMaterial4" value="custom_metal" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial4">
+                                            <span>Otro:</span>
+                                            <input class="form-control form-control-sm">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <p>Plástico o material sintético</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="img/puertas/PUERTASIMG0016.jpg" class="d-block border" >
+                                </div>
+                                <div class="col-8 custom-radio">
+                                    <div>
+                                        <input type="radio" id="puertasMaterial5" value="pvc" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial5">PVC</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="puertasMaterial6" value="otro_plastico" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial6">Otro plástico</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="puertasMaterial7" value="sintetico" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial7">Sintético</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="puertasMaterial8" value="custom_plastico" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial8">
+                                            <span>Otro:</span>
+                                            <input class="form-control form-control-sm">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <p>Vidrio</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="img/puertas/PUERTASIMG0017.jpg" class="d-block border" >
+                                </div>
+                                <div class="col-8 custom-radio">
+                                    <div>
+                                        <input type="radio" id="puertasMaterial9" value="chapada" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial9">Seleccionar</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <p>Chapada de madera, con interior de otros materiales</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="img/puertas/PUERTASIMG0018.jpg" class="d-block border" >
+                                </div>
+                                <div class="col-8 custom-radio">
+                                    <div>
+                                        <input type="radio" id="puertasMaterial10" value="chapada" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial10">Seleccionar</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <p>Madera maciza</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="img/puertas/PUERTASIMG0019.jpg" class="d-block border" >
+                                </div>
+                                <div class="col-8 custom-radio">
+                                    <div>
+                                        <input type="radio" id="puertasMaterial11" value="chapada" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial11">Seleccionar</label>
+                                        <select class="form-control">
+                                            <option v-for="(opt, i) in puertasTipoMaderaOpc" :key="i">{{ opt.name }} </option>
+                                        </select>
+
+                                        <p class="text-info mt-3 mb-0">Otra no reflejada en esta selección: especifíquela</p>
+                                        <input class="form-control" placeholder="Otra">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <p>Madera externa e interna con esqueleto de metal u otro material</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="img/puertas/PUERTASIMG0020.jpg" class="d-block border" >
+                                </div>
+                                <div class="col-8 custom-radio">
+                                    <div>
+                                        <input type="radio" id="puertasMaterial12" value="chapada" name="puertasMaterial" class="custom-control-input">
+                                        <label class="custom-control-label" for="puertasMaterial12">Seleccionar</label>
+                                        <select class="form-control">
+                                            <option v-for="(opt, i) in puertasTipoMaderaOpc" :key="i">{{ opt.name }} </option>
+                                        </select>
+                                        
+                                        <p class="text-info mt-3 mb-0">Otra no reflejada en esta selección: especifíquela</p>
+                                        <input class="form-control" placeholder="Otra">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+            </div>
+
+            <!-- movimiento -->
+            <div class="col-12 form-group">
+                <div class="col-12 mt-4 px-0">
+                    <label class="h5">Movimiento:</label>
+                </div>
+            </div>
+
+            <div class="col-12 px-3 form-group">
+                <div class="row px-4">                        
+                    <div v-for="(opc, i) in puertasMovimientoOpc" :key="opc.name" class="col-12 col-md-4 custom-radio mt-3">
+                        <input type="radio" :id="'puertasMovimiento' + i" :value="opc.name" name="puertasMovimiento" class="custom-control-input">
+                        <label class="custom-control-label" :for="'puertasMovimiento' + i">
+                            <img :src="opc.img" class="d-block" >
+                        </label>
+                    </div>                    
+                </div>
+            </div>
+
+            <div class="col-12 mb-3">
+                <div class="form-inline mt-2">
+                    <label class="form-check-label">Otra no reflejada en esta selección: especifíquela</label>
+                    <input class="form-control ml-2" />
+                </div>
+            </div>
+
+            <div class="col-12 form-group">
+                <div class="col-12 mt-4 px-0">
+                    <label class="h5">Tipo de corredera:</label>
+                </div>
+            </div>
+            <div class="col-12 px-3 form-group">
+                <div class="row px-4">                        
+                    <div v-for="(opc, i) in puertasCorrederaOpc" :key="opc.name" class="col-12 col-md-4 custom-radio mt-3">
+                        <input type="radio" :id="'puertasCorredera' + i" :value="opc.name" name="puertasCorredera" class="custom-control-input">
+                        <label class="custom-control-label" :for="'puertasCorredera' + i">
+                            <img :src="opc.img" class="d-block" >
+                        </label>
+                    </div>                    
+                </div>
+            </div>
+
+            <div class="col-12 mb-3">
+                <div class="form-inline mt-2">
+                    <label class="form-check-label">Otra no reflejada en esta selección: especifíquela</label>
+                    <input class="form-control ml-2" />
+                </div>
+            </div>
+            <!-- fin movimiento -->
+
+            <div class="col-12 form-group">
+                <div class="col-12 mt-4 px-0">
+                    <label class="h5">Relieve:</label>
+                </div>
+            </div>
+            <div class="col-12 px-3 form-group">
+                <div class="row px-4">                        
+                    <template  v-for="(opc, i) in puertasRelieveOpc" >
+
+                        <div v-if="i == 5 || i == 10 || i == 18" :key="opc.name + 'divisor'" class="col-12">
+                            <p v-if="i == 18" class="mt-4 mb-0">
+                                Artístico
+                            </p>
+                        </div>
+
+                        <div class="col custom-radio mt-3" :key="opc.name">
+                            <input type="radio" :id="'puertasRelieve' + i" :value="opc.name" name="puertasRelieve" class="custom-control-input">
+                            <label class="custom-control-label" :for="'puertasRelieve' + i">
+                                <img :src="opc.img" class="d-block" >
+                            </label>
+                        </div>
+                    </template>                    
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <div class="form-inline mt-2">
+                    <label class="form-check-label">Otra no reflejada en esta selección: especifíquela</label>
+                    <input class="form-control ml-2" />
+                </div>
+            </div>
+
+
+
+            <div class="col-12 form-group">
+                <div class="col-12 mt-4 px-0">
+                    <label class="h5">Acabado:</label>
+                </div>
+            </div>
+            <div class="col-12 px-3 form-group">
+                <div class="row px-4">
+                    <div class="col custom-radio mt-3" v-for="(opc, i) in puertasAcabadoOpc" :key="opc.name">
+                        <input type="radio" :id="'puertasAcabado' + i" :value="opc.name" name="puertasAcabado" class="custom-control-input">
+                        <label class="custom-control-label" :for="'puertasAcabado' + i">
+                            {{opc.name}}
+                            <img :src="opc.img" class="d-block" >
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <div class="form-inline mt-2">
+                    <label class="form-check-label">Otra no reflejada en esta selección: especifíquela</label>
+                    <input class="form-control ml-2" />
+                </div>
+            </div>
+
+
+            <div class="col-12 form-group">
+                <div class="col-12 mt-4 px-0">
+                    <label class="h5">Con incrustaciones de:</label>
+                </div>
+            </div>
+            <div class="col-12 px-3 form-group">
+                <div class="row px-4">
+                    <div class="col custom-radio mt-3" v-for="(opc, i) in puertasIncrutacionesOpc" :key="opc.name">
+                        <input type="radio" :id="'puertasIncrutaciones' + i" :value="opc.name" name="puertasIncrutaciones" class="custom-control-input">
+                        <label class="custom-control-label" :for="'puertasIncrutaciones' + i">
+                            {{opc.name}}
+                            <img v-if="opc.img" :src="opc.img" class="d-block" >
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <div class="form-inline mt-2">
+                    <label class="form-check-label">Otra no reflejada en esta selección: especifíquela</label>
+                    <input class="form-control ml-2" />
+                </div>
+            </div>
+
+            <div class="col-12 form-group">
+                <div class="col-12 mt-4 px-0">
+                    <label class="h5">Tipo de cristalera:</label>
+                </div>
+            </div>
+            <div class="col-12 px-3 form-group">
+                <div class="row px-4">                        
+                    <div class="col custom-radio mt-3"  v-for="(opc, i) in puertasCristaleraOpc"  :key="opc.name">
+                        <input type="radio" :id="'puertasCristalera' + i" :value="opc.name" name="puertasCristalera" class="custom-control-input">
+                        <label class="custom-control-label" :for="'puertasCristalera' + i">
+                            <img :src="opc.img" class="d-block" >
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <div class="form-inline mt-2">
+                    <label class="form-check-label">Otra no reflejada en esta selección: especifíquela</label>
+                    <input class="form-control ml-2" />
+                </div>
+            </div>
+
+            <div class="col-12 form-group">
+                <div class="col-12 mt-4 px-0">
+                    <label class="h5">Moldura de cristal:</label>
+                </div>
+            </div>
+            <div class="col-12 px-3 form-group">
+                <div class="row px-4">                        
+                    <div class="col custom-radio mt-3"  v-for="(opc, i) in puertasMolduraCristalOpc"  :key="opc.name">
+                        <input type="radio" :id="'puertasMolduraCristal' + i" :value="opc.name" name="puertasMolduraCristal" class="custom-control-input">
+                        <label class="custom-control-label" :for="'puertasMolduraCristal' + i">
+                            <img :src="opc.img" class="d-block" >
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <div class="form-inline mt-2">
+                    <label class="form-check-label">Otra no reflejada en esta selección: especifíquela</label>
+                    <input class="form-control ml-2" />
+                </div>
+            </div>
+
+            <div class="col-12 form-group">
+                <label class="font-weight-bold mt-2">Seguridad</label>
+                <div class="row">
+                        <div v-for="(opc, i) in puertasSeguridadOpc" :key="opc.value" class="form-check">
+                        <div class="col-12">
+                            <input class="form-check-input" type="checkbox" :id="'puertasSeguridad' + i" :value="opc.name">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-check-label" :for="'puertasSeguridad' + i">
+                                <span v-if="opc.name" class="form-check-label">{{ opc.name }}</span>
+                                <img :src="opc.img" class="d-block" >
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>                
+            </div>
+
+            <div class="col-12 mb-3 px-0">
+                <div class="form-inline mt-2">
+                    <label class="font-weight-bold mt-2">Otros detalles que se deben tener en cuenta y no han sido descritos</label>
+                    <input class="form-control ml-2" />
+                </div>                        
+            </div>
+
+            <div class="col-12 mb-3 px-0">
+                <label class="font-weight-bold mt-2">Adaptadas a minusvalidos</label>
+
+                <div v-for="(opc, i) in simpleSiNoOpc" :key="opc.name" class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" :id="'adaptadaMinusvalidos' + i" :value="opc.name" name="adaptadaMinusvalidos" class="custom-control-input">
+                    <label class="custom-control-label" :for="'adaptadaMinusvalidos' + i">{{ opc.name }}</label>
+                </div>
+            </div>
+
+            <div class="col-12 my-3 px-0">
+                <div class="form-inline mt-2">
+                    <label class="font-weight-bold mt-2">CANTIDAD DE PUERTAS HAY EN LA VIVIENDA CON LAS CARACTERÍSTICAS DESCRITAS</label>
+                    <input class="form-control ml-2" type="number"/>
+                </div>
+            </div>
+
+            <div class="col-12 my-3 px-0">
+                <button class="btn btn-success btn-sm">Añadir otro tipo de armario</button>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-12 text-right">
@@ -1032,6 +1482,23 @@
             for(var i = 1900; i<=2021; i++){
                 this.anio_construccion_opciones = [...this.anio_construccion_opciones, i]
             }
+
+            for(var i = 66; i<=117; i++){
+                let num = (i < 100) ? "00" + i : "0" + i
+                this.puertasCristaleraOpc = [
+                    ...this.puertasCristaleraOpc,
+                    {name: "" + num, img: "img/puertas/PUERTASIMG"  + num +".jpg"},
+                ]
+            }
+
+            for(var i = 118; i<=123; i++){
+                let num =  "0" + i
+                this.puertasMolduraCristalOpc = [
+                    ...this.puertasMolduraCristalOpc,
+                    {name: "" + num, img: "img/puertas/PUERTASIMG"  + num +".jpg"},
+                ]
+            }
+
         },
         computed: {
             porc_progreso : function () {
@@ -1040,8 +1507,8 @@
         },
         data: function () {
             return {
-                page: 1, // página inicial
-                total_pages: 8,
+                page: 9, // página inicial
+                total_pages: 9,
                 anio_construccion_opciones: [],
                 form: {
                     encimera: ""
@@ -1332,80 +1799,80 @@
                     {
                         name: "Ciudad",
                         value: "Ciudad",
-                        img: "img/ubicacion/UBICACIÓNIMG0001.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0001.jpg",
                     },
                     {
                         name: "Urbanización",
                         value: "Urbanización",
-                        img: "img/ubicacion/UBICACIÓNIMG0002.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0002.jpg",
                     },
                     {
                         name: "Pueblo",
                         value: "Pueblo",
-                        img: "img/ubicacion/UBICACIÓNIMG0003.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0003.jpg",
                     },
                     {
                         name: "Parcela",
                         value: "Parcela",
-                        img: "img/ubicacion/UBICACIÓNIMG0004.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0004.jpg",
                     },
                     {
                         name: "Polígono",
                         value: "Polígono",
-                        img: "img/ubicacion/UBICACIÓNIMG0005.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0005.jpg",
                     },
                     {
                         name: "Explotación agraria",
                         value: "Explotación agraria",
-                        img: "img/ubicacion/UBICACIÓNIMG0006.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0006.jpg",
                     }
                 ],
                 ubicacionLocalidadOpc : [
                     {
                         name: "Playa",
-                        img: "img/ubicacion/UBICACIÓNIMG0007.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0007.jpg",
                         l1: "Primera linea",
                         l2: "Segunda linea",
                         l3: "A menos de 50Km",
                     },
                     {
                         name: "Esquí",
-                        img: "img/ubicacion/UBICACIÓNIMG0008.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0008.jpg",
                         l1: "Centro",
                         l2: "Periferia",
                         l3: "A menos de 50Km",
                     },
                     {
                         name: "Parque natural",
-                        img: "img/ubicacion/UBICACIÓNIMG0009.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0009.jpg",
                         l1: "Dentro",
                         l2: "Próximo",
                         l3: "A menos de 50Km",
                     },
                     {
                         name: "Embalse/pantano",
-                        img: "img/ubicacion/UBICACIÓNIMG0010.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0010.jpg",
                         l1: "Junto a",
                         l2: "Próximo",
                         l3: "A menos de 50Km",
                     },
                     {
                         name: "Zona turística",
-                        img: "img/ubicacion/UBICACIÓNIMG0011.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0011.jpg",
                         l1: null,
                         l2: null,
                         l3: "A menos de 50Km",
                     },
                     {
                         name: "Zona monumental",
-                        img: "img/ubicacion/UBICACIÓNIMG0012.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0012.jpg",
                         l1: "En casco histórico",
                         l2: "Próximo",
                         l3: "A menos de 50Km",
                     },
                     {
                         name: "Calificación de patrimonio de la humanidad",
-                        img: "img/ubicacion/UBICACIÓNIMG0013.jpg",
+                        img: "img/ubicacion/UBICACIONIMG0013.jpg",
                         l1: "En casco histórico",
                         l2: "Próximo",
                         l3: "A menos de 50Km",
@@ -1608,6 +2075,210 @@
                     { name: "De obra" },
                     { name: "De material plástico o sintético" },
                     { name: "De material metálíco" }
+                ],
+                puertasModelosOpc: [
+                    {
+                        name: "Clásica",
+                        img: "img/puertas/PUERTASIMG0001.jpg",
+                    },
+                    {
+                        name: "Moderna",
+                        img: "img/puertas/PUERTASIMG0002.jpg",
+                    },
+                    {
+                        name: "Rústica",
+                        img: "img/puertas/PUERTASIMG0003.jpg",
+                    },
+                    {
+                        name: "Étnica",
+                        img: "img/puertas/PUERTASIMG0004.jpg",
+                    },
+                    {
+                        name: "Con cristal",
+                        img: "img/puertas/PUERTASIMG0005.jpg",
+                    },
+                    {
+                        name: "Vidriera",
+                        img: "img/puertas/PUERTASIMG0006.jpg",
+                    },
+                    {
+                        name: "Singular",
+                        img: "img/puertas/PUERTASIMG0007.jpg",
+                    },
+                    {
+                        name: "De emergencia",
+                        img: "img/puertas/PUERTASIMG0008.jpg",
+                    }
+                ],
+                puertasHojasOpc: [
+                    {
+                        name: "1",
+                        img: "img/puertas/PUERTASIMG0009.jpg",
+                    },
+                    {
+                        name: "2",
+                        img: "img/puertas/PUERTASIMG00010.jpg",
+                    },
+                    {
+                        name: "3",
+                        img: "img/puertas/PUERTASIMG00011.jpg",
+                    },
+                    {
+                        name: "4",
+                        img: "img/puertas/PUERTASIMG00012.jpg",
+                    },
+                    {
+                        name: "5",
+                        img: "img/puertas/PUERTASIMG00013.jpg",
+                    },
+                    {
+                        name: "6",
+                        img: "img/puertas/PUERTASIMG00014.jpg",
+                    },
+                ],
+                puertasTipoMaderaOpc: [
+                    {name: "Caoba"},
+                    {name: "Ébano"},
+                    {name: "Teca"},
+                    {name: "Iroko"},
+                    {name: "Tropical"},
+                    {name: "Roble"},
+                    {name: "Nogal"},
+                    {name: "Cerezo"},
+                    {name: "Olivo"},
+                    {name: "Olmo"},
+                    {name: "Haya"},
+                    {name: "Pino"},
+                    {name: "Cedro"},
+                    {name: "Castaño"},
+                    {name: "Álamo"},
+                    {name: "Abeto"},
+                    {name: "Abedul"}
+                ],
+                puertasMovimientoOpc: [
+                    {name: "abatible", img: "img/puertas/PUERTASIMG0021.jpg"},
+                    {name: "pivotante", img: "img/puertas/PUERTASIMG0022.jpg"},
+                    {name: "doble", img: "img/puertas/PUERTASIMG0023.jpg"},
+                    {name: "multiple", img: "img/puertas/PUERTASIMG0024.jpg"},
+                    {name: "plegable", img: "img/puertas/PUERTASIMG0025.jpg"},
+                    {name: "corredera", img: "img/puertas/PUERTASIMG0026.jpg"},
+                ],
+                puertasCorrederaOpc: [
+                    {name: "enfrentadas", img: "img/puertas/PUERTASIMG0027.jpg"},
+                    {name: "corredera_y_fijo", img: "img/puertas/PUERTASIMG0028.jpg"},
+                    {name: "paralelas", img: "img/puertas/PUERTASIMG0029.jpg"},
+                    {name: "en_esquina", img: "img/puertas/PUERTASIMG0030.jpg"},
+                    {name: "telescopicas", img: "img/puertas/PUERTASIMG0031.jpg"},
+                    {name: "plegables", img: "img/puertas/PUERTASIMG0032.jpg"},
+                    {name: "apilables", img: "img/puertas/PUERTASIMG0033.jpg"},
+                ],
+                puertasRelieveOpc: [
+                    {name: "a01", img: "img/puertas/PUERTASIMG0034.jpg"},
+                    {name: "a02", img: "img/puertas/PUERTASIMG0035.jpg"},
+                    {name: "a03", img: "img/puertas/PUERTASIMG0036.jpg"},
+                    {name: "a04", img: "img/puertas/PUERTASIMG0037.jpg"},
+                    {name: "a05", img: "img/puertas/PUERTASIMG0038.jpg"},
+
+                    {name: "b01", img: "img/puertas/PUERTASIMG0039.jpg"},
+                    {name: "b02", img: "img/puertas/PUERTASIMG0040.jpg"},
+                    {name: "b03", img: "img/puertas/PUERTASIMG0041.jpg"},
+                    {name: "b04", img: "img/puertas/PUERTASIMG0042.jpg"},
+                    {name: "b05", img: "img/puertas/PUERTASIMG0043.jpg"},
+
+                    {name: "c01", img: "img/puertas/PUERTASIMG0044.jpg"},
+                    {name: "c02", img: "img/puertas/PUERTASIMG0045.jpg"},
+                    {name: "c03", img: "img/puertas/PUERTASIMG0046.jpg"},
+                    {name: "c04", img: "img/puertas/PUERTASIMG0047.jpg"},
+                    {name: "c05", img: "img/puertas/PUERTASIMG0048.jpg"},
+                    {name: "c06", img: "img/puertas/PUERTASIMG0049.jpg"},
+                    {name: "c07", img: "img/puertas/PUERTASIMG0050.jpg"},
+                    {name: "c08", img: "img/puertas/PUERTASIMG0051.jpg"},
+
+                    {name: "d01", img: "img/puertas/PUERTASIMG0052.jpg"},
+                    {name: "d02", img: "img/puertas/PUERTASIMG0053.jpg"},
+                    {name: "d03", img: "img/puertas/PUERTASIMG0054.jpg"},
+                    {name: "d04", img: "img/puertas/PUERTASIMG0055.jpg"},
+                    {name: "d05", img: "img/puertas/PUERTASIMG0055.jpg"},
+                    {name: "d06", img: "img/puertas/PUERTASIMG0056.jpg"},
+                    {name: "d07", img: "img/puertas/PUERTASIMG0057.jpg"},
+                    {name: "d08", img: "img/puertas/PUERTASIMG0058.jpg"},
+
+                ],
+
+                puertasAcabadoOpc: [
+                    {name: "Lacada", img: "img/puertas/PUERTASIMG0059.jpg"},
+                    {name: "Barnizada", img: "img/puertas/PUERTASIMG0060.jpg"},
+                    {name: "Pintada", img: "img/puertas/PUERTASIMG0061.jpg"},
+                ],
+
+                puertasIncrutacionesOpc: [
+                    {name: "Hueso", img: "img/puertas/PUERTASIMG0062.jpg"},
+                    {name: "Maderas nobles", img: "img/puertas/PUERTASIMG0063.jpg"},
+                    {name: "Metal", img: "img/puertas/PUERTASIMG0064.jpg"},
+                    {name: "Marfil", img: "img/puertas/PUERTASIMG0065.jpg"},
+                    {name: "Combinación de anteriores", img: null},
+                ],
+
+                puertasCristaleraOpc: [ ],//llenado con js
+                    
+                puertasMolduraCristalOpc: [ ],//llenado con js
+
+                puertasSeguridadOpc: [
+                    {
+                        value: "con_cerradura",
+                        name: "Con cerradura",
+                        img: "img/puertas/PUERTASIMG0124.jpg",
+                    },
+                    {
+                        value: "sin_cerradura",
+                        name: "Sin cerradura",
+                        img: "img/puertas/PUERTASIMG0125.jpg",
+                    },
+                    {
+                        value: "puerta_extra",
+                        name: "Con puerta extra de entrada",
+                        img: "img/puertas/PUERTASIMG0126.jpg",
+                    },
+                    {
+                        value: "acorazada_g3",
+                        name: "Puerta acorazada, grado 3",
+                        img: "img/puertas/PUERTASIMG0127.jpg",
+                    },
+                    {
+                        value: "acorazada_g4",
+                        name: "Puerta acorazada, grado 4",
+                        img: "img/puertas/PUERTASIMG0128.jpg",
+                    },
+                    {
+                        value: "acorazada_g5",
+                        name: "Puerta acorazada, grado 5",
+                        img: "img/puertas/PUERTASIMG0129.jpg",
+                    },
+                    {
+                        value: "anti_okupa",
+                        name: "Puerta anti-okupa",
+                        img: "img/puertas/PUERTASIMG0133.jpg",
+                    },
+                    {
+                        value: "cilindro_antibumping",
+                        name: "Cilindro antibumping",
+                        img: "img/puertas/PUERTASIMG0130.jpg",
+                    },
+                    {
+                        value: "cerradura_digital",
+                        name: "Cerradura digital",
+                        img: "img/puertas/PUERTASIMG0131.jpg",
+                    },
+                    {
+                        value: "escudo_de_cerradura",
+                        name: "Escudo de cerradura",
+                        img: "img/puertas/PUERTASIMG0132.jpg",
+                    },
+                    {
+                        value: "cerradura_con_huella_digital",
+                        name: "Cerradura con huella digital",
+                        img: "img/puertas/PUERTASIMG0134.jpg",
+                    }
                 ]
             }
         },
